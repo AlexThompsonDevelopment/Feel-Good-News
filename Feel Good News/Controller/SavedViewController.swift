@@ -17,13 +17,14 @@ class SavedViewController: UIViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
-        articles = GlobalArray.savedArrayGlobal
+        super.viewWillAppear(animated)
+        articles = sharedManager.savedArrayGlobal
            tableView.reloadData()
         if articles.isEmpty {
-            let ac = UIAlertController(title: "", message: "Saved articles will be stored here", preferredStyle: .alert)
-            self.present(ac, animated: true) {
-                let tap = UITapGestureRecognizer(target: self, action: #selector(self.dismissAC))
-                ac.view.superview?.subviews[0].addGestureRecognizer(tap)
+            let articleAlert = UIAlertController(title: "", message: "Saved articles will be stored here", preferredStyle: .alert)
+            self.present(articleAlert, animated: true) {
+                let tap = UITapGestureRecognizer(target: self, action: #selector(self.dismissAlert))
+                articleAlert.view.superview?.subviews[0].addGestureRecognizer(tap)
             }
         }
     }
@@ -36,7 +37,7 @@ class SavedViewController: UIViewController {
         tableView.register(UINib(nibName: "TableViewXib", bundle: nil), forCellReuseIdentifier: "CellXib")
       
     }
-    @objc func dismissAC() {
+    @objc func dismissAlert() {
         self.dismiss(animated: true, completion: nil)
     }
 }
@@ -56,8 +57,8 @@ extension SavedViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            GlobalArray.dateArrayGlobal.remove(at: indexPath.row)
-            GlobalArray.savedArrayGlobal.remove(at: indexPath.row)
+            sharedManager.dateArrayGlobal.remove(at: indexPath.row)
+            sharedManager.savedArrayGlobal.remove(at: indexPath.row)
             articles.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
             tableView.reloadData()
@@ -93,7 +94,7 @@ extension SavedViewController: UITableViewDelegate, UITableViewDataSource {
         }
         cell.cellImage.layer.cornerRadius = 10
         cell.cellTitle.text = cellArticles.title
-        cell.cellDate.text = GlobalArray.dateArrayGlobal[indexPath.row]
+        cell.cellDate.text = sharedManager.dateArrayGlobal[indexPath.row]
         
         //downloads and caches images faster
         SDWebImageDownloader.shared.downloadImage(

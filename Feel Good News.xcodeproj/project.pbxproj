@@ -10,7 +10,7 @@
 		D81DCC16BDC24EE26E138CDA /* Pods_Feel_Good_News.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59EEF02448403B2C134F1E81 /* Pods_Feel_Good_News.framework */; };
 		FA2F3CE025F0953100B5DB2B /* NewsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F3CDF25F0953100B5DB2B /* NewsManager.swift */; };
 		FA40A574260D9133006A817F /* SavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA40A573260D9133006A817F /* SavedViewController.swift */; };
-		FA40A577260DA18D006A817F /* GlobalArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA40A576260DA18D006A817F /* GlobalArray.swift */; };
+		FA40A577260DA18D006A817F /* SharedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA40A576260DA18D006A817F /* SharedManager.swift */; };
 		FA40A57C260DE737006A817F /* App Icons - App Store 2-1024.png in Resources */ = {isa = PBXBuildFile; fileRef = FA40A57B260DE737006A817F /* App Icons - App Store 2-1024.png */; };
 		FA72291625FF0AEC00D00D4D /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72291525FF0AEC00D00D4D /* CollectionViewCell.swift */; };
 		FA7BC59025D5FA5700439347 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7BC58F25D5FA5700439347 /* AppDelegate.swift */; };
@@ -33,7 +33,7 @@
 		F7308F69AE8B37B4D68F1415 /* Pods-Feel Good News.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feel Good News.debug.xcconfig"; path = "Target Support Files/Pods-Feel Good News/Pods-Feel Good News.debug.xcconfig"; sourceTree = "<group>"; };
 		FA2F3CDF25F0953100B5DB2B /* NewsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsManager.swift; sourceTree = "<group>"; };
 		FA40A573260D9133006A817F /* SavedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedViewController.swift; sourceTree = "<group>"; };
-		FA40A576260DA18D006A817F /* GlobalArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalArray.swift; sourceTree = "<group>"; };
+		FA40A576260DA18D006A817F /* SharedManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedManager.swift; sourceTree = "<group>"; };
 		FA40A57B260DE737006A817F /* App Icons - App Store 2-1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "App Icons - App Store 2-1024.png"; sourceTree = "<group>"; };
 		FA40A59C26118281006A817F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		FA72291525FF0AEC00D00D4D /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
@@ -123,7 +123,7 @@
 			children = (
 				FA9A917D25F1A39E00CE109A /* NewsData.swift */,
 				FA2F3CDF25F0953100B5DB2B /* NewsManager.swift */,
-				FA40A576260DA18D006A817F /* GlobalArray.swift */,
+				FA40A576260DA18D006A817F /* SharedManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -282,7 +282,7 @@
 				FA7BC59425D5FA5700439347 /* HomeViewController.swift in Sources */,
 				FA7BC5B825D6122A00439347 /* SearchViewController.swift in Sources */,
 				FA7BC5B525D611CA00439347 /* ArticleViewController.swift in Sources */,
-				FA40A577260DA18D006A817F /* GlobalArray.swift in Sources */,
+				FA40A577260DA18D006A817F /* SharedManager.swift in Sources */,
 				FA7BC5B225D6119C00439347 /* SettingsTableViewController.swift in Sources */,
 				FA40A574260D9133006A817F /* SavedViewController.swift in Sources */,
 				FA7BC59025D5FA5700439347 /* AppDelegate.swift in Sources */,

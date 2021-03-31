@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct GlobalArray   {
+struct sharedManager   {
     
     //for saving articles
     static var savedArrayGlobal = [Article]()

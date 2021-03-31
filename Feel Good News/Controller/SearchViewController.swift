@@ -81,9 +81,9 @@ extension SearchViewController: NewsManagerDelegate {
         
         DispatchQueue.main.async {
             self.searchArray = news.articles
-            for i in self.searchArray {
-                if i.publishedAt != nil {
-                    self.dateArray.append(self.newsManager.dateFormatter(date: i.publishedAt!))
+            for article in self.searchArray {
+                if article.publishedAt != nil {
+                    self.dateArray.append(self.newsManager.dateFormatter(date: article.publishedAt!))
                 }
             }
             self.tableView.reloadData()
@@ -136,7 +136,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         //downloads and caches images faster
         SDWebImageDownloader.shared.downloadImage(
             with: URL(string: cellArticles.urlToImage ?? ""),
-            options: [.highPriority, .continueInBackground],
+            options: [.highPriority, .continueInBackground, .avoidDecodeImage, .decodeFirstFrameOnly],
             progress: { (receivedSize, expectedSize, url) in
             },
             completed: { [weak self] (image, data, error, finished) in

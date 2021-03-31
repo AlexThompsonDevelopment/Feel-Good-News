@@ -47,9 +47,9 @@ extension HomeViewController: NewsManagerDelegate {
         DispatchQueue.main.async {
             self.articles = news.articles
             self.articles = news.articles
-            for i in self.articles {
-                if i.publishedAt != nil {
-                    self.dateArray.append(self.newsManager.dateFormatter(date: i.publishedAt!))
+            for article in self.articles {
+                if article.publishedAt != nil {
+                    self.dateArray.append(self.newsManager.dateFormatter(date: article.publishedAt!))
                 }
             }
             
@@ -86,7 +86,7 @@ extension HomeViewController: UITableViewDataSource , UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        GlobalArray.dateArrayGlobal.insert(dateArray[indexPath.row], at: 0)
+        sharedManager.dateArrayGlobal.insert(dateArray[indexPath.row], at: 0)
         performSegue(withIdentifier: "TableViewArticle", sender: self)
     }
     
