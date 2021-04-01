@@ -8,26 +8,26 @@
 import Foundation
 import UIKit
 
-protocol NewsManagerDelegate {
+protocol NewsManagerDelegate: AnyObject {
     func updateNews(_ newsManager: NewsManager, news: Articles)
 }
 
 struct NewsManager {
-    var delegate: NewsManagerDelegate?
+    weak var delegate: NewsManagerDelegate?
     
     let generalURLString =  "https://newsapi.org/v2/top-headlines?"
     let searchURLString = "https://newsapi.org/v2/everything?"
     let categories = ["general", "business", "entertainment", "health", "science", "sports", "technology"]
-    var category = "general"
     let apiKey = "apikey=a1c9799d78c040df82b183e5ccae527f"
     let country = "&country=au"
-    var search = ""
     let pageSize = "&pagesize=100"
     let language = "&language=en"
-    
+    var category = "general"
+    var search = ""
     
     func parseData(option: String)  {
         var urlString = ""
+   
         if option == "Search" {
             urlString = "\(searchURLString)\(apiKey)\(language)\(search)+australia"
         } else if option == "General" {

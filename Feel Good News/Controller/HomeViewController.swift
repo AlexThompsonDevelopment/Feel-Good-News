@@ -35,6 +35,7 @@ class HomeViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         newsManager.delegate = self
+    
     }
     
 }
